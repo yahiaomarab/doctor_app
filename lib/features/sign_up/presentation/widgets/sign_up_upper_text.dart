@@ -2,8 +2,8 @@ import 'package:doctor_app/core/helper/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 
-class UpperText extends StatelessWidget {
-  const UpperText({super.key});
+class SignUpUpperText extends StatelessWidget {
+  const SignUpUpperText({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,12 +11,12 @@ class UpperText extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          'Welcome Back',
+          'Create Account',
           style: TextStyles.font24BlueBold,
         ),
         verticalSpace(8),
         Text(
-          'We\'re excited to have you back, can\'t wait to\nsee what you\'ve been up to since you last\nlogged in.',
+          'Sign up now and start exploring all that our\napp has to offer. We\'re excited to welcome\nyou to our community!',
           style: TextStyles.font14GrayRegular,
         ),
       ],

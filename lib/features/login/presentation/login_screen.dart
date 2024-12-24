@@ -1,13 +1,12 @@
 import 'package:doctor_app/core/helper/spacing.dart';
 import 'package:doctor_app/core/theming/styles.dart';
 import 'package:doctor_app/core/widgets/text_button.dart';
-import 'package:doctor_app/features/login/data/models/login_request_body.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
-import 'package:doctor_app/features/login/presentation/widgets/already_have_account_text.dart';
+import 'package:doctor_app/features/login/presentation/widgets/dont_have_account_text.dart';
 import 'package:doctor_app/features/login/presentation/widgets/email_and_password.dart';
 import 'package:doctor_app/features/login/presentation/widgets/login_bloc_listener.dart';
 import 'package:doctor_app/features/login/presentation/widgets/terms_and_conditions_text.dart';
-import 'package:doctor_app/features/login/presentation/widgets/upper_text.dart';
+import 'package:doctor_app/features/login/presentation/widgets/login_upper_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -25,7 +24,7 @@ class LoginScreen extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const UpperText(),
+                const LoginUpperText(),
                 verticalSpace(36),
                 Column(
                   children: [
@@ -46,7 +45,7 @@ class LoginScreen extends StatelessWidget {
                     verticalSpace(16),
                     const TermsAndConditionsText(),
                     verticalSpace(60),
-                    const AlreadyHaveAccountText(),
+                    const DontHaveAccountText(),
                     const LoginBlocListener(),
                   ],
                 ),
@@ -60,11 +59,7 @@ class LoginScreen extends StatelessWidget {
 
   void validateThenDoLogin(BuildContext context) {
     if (context.read<LoginCubit>().formKey.currentState!.validate()) {
-      context.read<LoginCubit>().emitLoginStates(
-            LoginRequestBody(
-                email: context.read<LoginCubit>().emailController.text,
-                password: context.read<LoginCubit>().passwordController.text),
-          );
+      context.read<LoginCubit>().emitLoginStates();
     }
   }
 }
