@@ -2,6 +2,8 @@ import 'package:doctor_app/core/di/dependency_injection.dart';
 import 'package:doctor_app/core/routing/routes.dart';
 import 'package:doctor_app/features/home/home_screen.dart';
 import 'package:doctor_app/features/login/logic/cubit/login_cubit.dart';
+import 'package:doctor_app/features/sign_up/logic/cubit/sign_up_cubit.dart';
+import 'package:doctor_app/features/sign_up/presentation/sign_up_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor_app/features/login/presentation/login_screen.dart';
 import 'package:doctor_app/features/onboarding/onboarding_screen.dart';
@@ -19,6 +21,12 @@ class AppRouter {
           builder: (_) =>  BlocProvider(
             create:(context)=> getIt<LoginCubit>(),
             child: const LoginScreen()),
+        );
+      case Routes.signUpScreen:
+        return MaterialPageRoute(
+          builder: (_) =>  BlocProvider(
+            create:(context)=> getIt<SignUpCubit>(),
+            child: const SignUpScreen()),
         );
       case Routes.homeScreen:
         return MaterialPageRoute(
