@@ -30,18 +30,11 @@ jobs:
         bundler-cache: true
         working-directory: android
         
-    - name: Install Gradle (if not using gradlew wrapper)
-      run: |
-        wget https://services.gradle.org/distributions/gradle-8.2-bin.zip
-        unzip gradle-8.2-bin.zip
-        sudo mv gradle-8.2 /opt/gradle
-        sudo ln -s /opt/gradle/bin/gradle /usr/local/bin/gradle
-      working-directory: ./android  # Update the directory where gradlew might be
-
     - name: Build and Distribute App
       env:
         FIREBASE_CLI_TOKEN: ${{ secrets.FIREBASE_CLI_TOKEN }}
       run: |
-        ./gradlew clean  # If you're using the gradle wrapper
+        cd android  # Change directory to the folder containing gradlew
+        ./gradlew clean
         bundle exec fastlane android firebase_distribution
-      working-directory: ./android  # Ensure this matches where the gradlew file is located
+      working-directory: ./android  # Ensure this matches where gradlew file is located
