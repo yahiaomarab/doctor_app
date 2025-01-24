@@ -16,6 +16,7 @@ jobs:
       uses: actions/setup-java@v2
       with:
         java-version: '11'
+
         distribution: 'temurin'
     
     - name: Install Flutter
@@ -36,3 +37,4 @@ jobs:
       run: |
         bundle exec fastlane android firebase_distribution
       working-directory: android
+
