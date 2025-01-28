@@ -19,7 +19,12 @@ class TextStyles {
     color: ColorsManager.darkBlue,
     fontWeight: FontWeightHelper.medium,
   );
-    static TextStyle font15DarkBlueMedium = TextStyle(
+  static TextStyle font18DarkBlueBold = TextStyle(
+    fontSize: 18.sp,
+    color: ColorsManager.darkBlue,
+    fontWeight: FontWeightHelper.bold,
+  );
+  static TextStyle font15DarkBlueMedium = TextStyle(
     fontSize: 15.sp,
     color: ColorsManager.darkBlue,
     fontWeight: FontWeightHelper.medium,
@@ -34,22 +39,22 @@ class TextStyles {
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
-    static TextStyle font14BlueSemiBold = TextStyle(
+  static TextStyle font14BlueSemiBold = TextStyle(
     fontSize: 14.sp,
     fontWeight: FontWeightHelper.semiBold,
     color: ColorsManager.mainBlue,
   );
-    static TextStyle font13DarkBlueRegular = TextStyle(
+  static TextStyle font13DarkBlueRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.darkBlue,
   );
-  static TextStyle  font13DarkBlueMedium =TextStyle(
+  static TextStyle font13DarkBlueMedium = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.medium,
     color: ColorsManager.darkBlue,
   );
- static TextStyle font13GrayRegular =TextStyle(
+  static TextStyle font13GrayRegular = TextStyle(
     fontSize: 13.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.gray,
@@ -59,7 +64,7 @@ class TextStyles {
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.gray,
   );
-  static TextStyle font12BlueRegular =TextStyle(
+  static TextStyle font12BlueRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: FontWeightHelper.regular,
     color: ColorsManager.mainBlue,
