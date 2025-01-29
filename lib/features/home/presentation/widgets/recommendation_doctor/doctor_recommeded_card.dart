@@ -1,19 +1,16 @@
-import 'package:doctor_app/core/helper/spacing.dart';
-import 'package:doctor_app/core/theming/colors.dart';
-import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class DoctorsRecommendationListView extends StatelessWidget {
-  const DoctorsRecommendationListView({super.key});
+import '../../../../../core/helper/spacing.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
+
+class DoctorRecommededCard extends StatelessWidget {
+  const DoctorRecommededCard({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: ListView.builder(
-          itemCount: 10,
-          itemBuilder: (context, index) {
-            return Container(
+    return Container(
               padding: EdgeInsetsDirectional.only(start: 10.w, top: 30.h),
               child: Row(
                 children: [
@@ -69,7 +66,5 @@ class DoctorsRecommendationListView extends StatelessWidget {
                 ],
               ),
             );
-          }),
-    );
   }
 }

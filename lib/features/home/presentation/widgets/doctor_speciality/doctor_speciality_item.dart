@@ -1,23 +1,17 @@
-import 'package:doctor_app/core/helper/spacing.dart';
-import 'package:doctor_app/core/theming/colors.dart';
-import 'package:doctor_app/core/theming/styles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 
-class DoctorSpecialityListView extends StatelessWidget {
-  const DoctorSpecialityListView({super.key});
+import '../../../../../core/helper/spacing.dart';
+import '../../../../../core/theming/colors.dart';
+import '../../../../../core/theming/styles.dart';
 
+class DoctorSpecialityItem extends StatelessWidget {
+ const DoctorSpecialityItem({super.key, required this.index});
+  final int index;
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 100.h,
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          physics: BouncingScrollPhysics(),
-          itemCount: 8,
-          itemBuilder: (context, index) {
-            return Container(
+    return Container(
               padding: EdgeInsetsDirectional.only(start: index == 0 ? 0 : 24.w),
               child: Column(
                 children: [
@@ -38,7 +32,5 @@ class DoctorSpecialityListView extends StatelessWidget {
                 ],
               ),
             );
-          }),
-    );
   }
 }
