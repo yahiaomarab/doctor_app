@@ -1,3 +1,4 @@
+import 'package:doctor_app/features/home/data/models/specialization_response_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
@@ -7,7 +8,8 @@ import '../../../../../core/theming/colors.dart';
 import '../../../../../core/theming/styles.dart';
 
 class DoctorSpecialityItem extends StatelessWidget {
- const DoctorSpecialityItem({super.key, required this.index});
+  final SpecializationData? specializationData;
+ const DoctorSpecialityItem({super.key, required this.index, required this.specializationData});
   final int index;
   @override
   Widget build(BuildContext context) {
@@ -26,7 +28,7 @@ class DoctorSpecialityItem extends StatelessWidget {
                   ),
                   verticalSpace(8),
                   Text(
-                    'General',
+                   specializationData?.name?? 'Specialization',
                     style: TextStyles.font12DarkBlueRegular,
                   )
                 ],
