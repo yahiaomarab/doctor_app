@@ -1,13 +1,16 @@
 import 'package:doctor_app/core/helper/spacing.dart';
-import 'package:doctor_app/features/home/presentation/widgets/doctor_speciality/doctor_speciality_see_all.dart';
-import 'package:doctor_app/features/home/presentation/widgets/home_top_bar.dart';
+import 'package:doctor_app/features/home/logic/home_cubit.dart';
+import 'package:doctor_app/features/home/logic/home_state.dart';
+import 'package:doctor_app/features/home/ui/widgets/doctor_speciality/doctor_speciality_see_all.dart';
+import 'package:doctor_app/features/home/ui/widgets/home_top_bar.dart';
+import 'package:doctor_app/features/home/ui/widgets/specializations_and_doctors_bloc_builder.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'widgets/banner/doctor_blue_container.dart';
 import 'widgets/doctor_speciality/doctor_speciality_list_view.dart';
-import 'widgets/recommendation_doctor/doctors_recommendation_list_view.dart';
-import 'widgets/recommendation_doctor/recommendation_doctor_and_see_all.dart';
+import 'widgets/doctors/doctors_list_view.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -30,13 +33,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               const HomeTopBar(),
               const DoctorBlueContainer(),
-              verticalSpace(16),
+              verticalSpace(24),
               const DoctorSpecialitySeeAll(),
-              verticalSpace(16),
-              const DoctorSpecialityListView(),
-              verticalSpace(16),
-              const RecommendationDoctorAndSeeAll(),
-              const DoctorsRecommendationListView(),
+              verticalSpace(18),
+              SpecializationsAndDoctorsBlocBuilder(),
             ],
           ),
         ),
