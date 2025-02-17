@@ -1,3 +1,4 @@
+import 'package:doctor_app/core/helper/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:doctor_app/core/routing/app_router.dart';
 import 'package:doctor_app/core/routing/routes.dart';
@@ -10,19 +11,18 @@ class DoctorApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  ScreenUtilInit(
-      designSize: Size(375,812),
-      minTextAdapt: true,
-      child:MaterialApp(
-        title: "Doctor App",
-        theme: ThemeData(
-          primaryColor: ColorsManager.mainBlue,
-          scaffoldBackgroundColor: Colors.white,
-        ),
-        onGenerateRoute: appRouter.generateRoute,
-        initialRoute: Routes.homeScreen,
-        debugShowCheckedModeBanner: false,
-      )
-    );
+    return ScreenUtilInit(
+        designSize: Size(375, 812),
+        minTextAdapt: true,
+        child: MaterialApp(
+          title: "Doctor App",
+          theme: ThemeData(
+            primaryColor: ColorsManager.mainBlue,
+            scaffoldBackgroundColor: Colors.white,
+          ),
+          onGenerateRoute: appRouter.generateRoute,
+          initialRoute: isLoggedInUser ? Routes.homeScreen : Routes.loginScreen,
+          debugShowCheckedModeBanner: false,
+        ));
   }
 }
